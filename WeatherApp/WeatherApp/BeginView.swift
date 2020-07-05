@@ -157,7 +157,7 @@ struct Tag: Identifiable {
 }
 var tagData = [
     Tag(title: "My Weather Application", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card4"), logo: #imageLiteral(resourceName: "card_0"), color: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), show: false) ,
-    Tag(title: "The Next ", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card4"), logo: #imageLiteral(resourceName: "Logo3"), color: UIColor.white, show: false) ,
-    Tag(title: "The Next ", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card2"), logo: #imageLiteral(resourceName: "Logo3"), color: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), show: false)
+    Tag(title: "Next ", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card4"), logo: #imageLiteral(resourceName: "Logo3"), color: UIColor.white, show: false) ,
+    Tag(title: "Next ", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card2"), logo: #imageLiteral(resourceName: "Logo3"), color: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), show: false)
 ]
 

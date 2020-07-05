@@ -28,32 +28,15 @@ extension PredictViewModel{
         print(self.Humid.isEmpty)
         if self.Humid.isEmpty && !self.Temp.isEmpty
         {
-            if(self.Temp.contains("."))
-            {
-                url = "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(self.Temp)0"
-            }
-            else
-            {
-               url =  "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(self.Temp).0"
-            }
+            
+                url = "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(Double(self.Temp)!)"
+           
         }
         else if !self.Humid.isEmpty && !self.Temp.isEmpty
         {
-            if self.Temp.contains(".") && self.Humid.contains(".")
-            {
-               url = "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(self.Temp)0/\(self.Humid)0"
-            }
-            else if !self.Temp.contains(".") && self.Humid.contains(".")
-            {
-              url =  "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(self.Temp).0/\(self.Humid)0"           }
-            else if self.Temp.contains(".") && !self.Humid.contains(".")
-            {
-              url = "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(self.Temp)0/\(self.Humid).0"
-            }
-            else
-            {
-                url =  "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(self.Temp).0/\(self.Humid).0"
-            }
+           
+                url =  "http://ec2-13-112-143-23.ap-northeast-1.compute.amazonaws.com:5000/iot/\(Double(self.Temp)!)/\(Double(self.Humid)!)"
+            
         }
         API().fetchWeather(url: url)
         {

@@ -53,7 +53,7 @@ struct PredictWithHumid: View {
                     print(self.NextTemp.Temp)
                     self.NextTemp.fetch()
                     
-                    self.nextWather = Tag(title: "The Next ", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card2"), logo: #imageLiteral(resourceName: "Logo3"), color: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), show: false)
+                    self.nextWather = Tag(title: "Next ", subtitle: "Help you to predict", image: #imageLiteral(resourceName: "Card2"), logo: #imageLiteral(resourceName: "Logo3"), color: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), show: false)
                     self.status = "Complete!!"
                     
                     
@@ -78,18 +78,19 @@ struct PredictWithHumid: View {
             GeometryReader { geometry in
                 PredictTemp(show: self.$nextWather.show, course: self.nextWather, active: self.$active, NextTemp:  self.NextTemp.NextTemp?.next ?? 0)
                     .offset(y: self.nextWather.show ? -geometry.frame(in: .global).minY : 0)
+                
             }
             .frame(height: 280)
             .frame(maxWidth: self.nextWather.show ? .infinity : screen.width - 60)
             .zIndex(self.nextWather.show ? 1 : 0)
             .foregroundColor(.black)
-            
+             
             
             }.padding(20)
         
         }
            
-        }.edgesIgnoringSafeArea(.all).keyboardAdaptive()
+        }.edgesIgnoringSafeArea(.all).keyboardType(.numbersAndPunctuation).keyboardAdaptive()
         
         
     }

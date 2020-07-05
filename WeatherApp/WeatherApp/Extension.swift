@@ -61,3 +61,4 @@ func gradientColorOfTheDay(_ day: Int) -> [Color] {
         return Color.monday
     }
 }
+

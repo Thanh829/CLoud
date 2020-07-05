@@ -15,6 +15,7 @@ struct PredictView: View {
    @State var active = false
     var CurrentTemp : Double
     var NextTemp : Double
+    //let timer = Timer.publish(every: 11, on: .main, in: .common).autoconnect()
    var body: some View {
        
        ZStack {
@@ -73,7 +74,7 @@ struct PredictTemp: View {
                        VStack(alignment: .leading, spacing: 8.0) {
                            Text(course.title)
                                .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color(course.color))
+                            .foregroundColor(Color(.black))
                          
                        
                        }

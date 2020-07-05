@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CurrentWeather: View  {
     var weather: Weather?
-
     var height: CGFloat = 0
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -52,9 +51,27 @@ struct CurrentWeather: View  {
                     .fontWeight(Font.Weight.thin)
                     .font(.system(size: 28))
             }
-            Text("Clear")
+            if Int(weather?.current ?? 0) < 28
+            {
+            Text("Rain")
             .foregroundColor(.white)
             .font(.body)
+               
+            }
+            else if Int(weather?.current ?? 0) < 29 && Int(weather?.current ?? 0) >= 28
+            {
+                Text("Cloud")
+                .foregroundColor(.white)
+                .font(.body)
+                
+            }
+            else {
+                
+                Text("Clear")
+                .foregroundColor(.white)
+                .font(.body)
+            }
+            
             
         
             
